@@ -26,3 +26,9 @@ To check the token for validity:
 
 1. Create 256-bit hash of the provided access token.
 1. Check if the access token was registered in the smart-contract.
+
+## Addresses (Kovan)
+
+Token: 0x18f4CC605F50c79Db9faD8ba7D333372e4A1923d
+
+Contract: 0x148452499f37F53DD4440f64e8bd9b6a64283B03
