@@ -4,7 +4,8 @@
   "description": "Smart-contracts for Circle.One demo",
   "main": "index.js",
   "scripts": {
-    "test": "truffle test"
+    "test": "truffle test",
+    "build-contracts": "sol-merger './contracts/*.sol' ./build"
   },
   "author": "482.solutions",
   "license": "ISC",
