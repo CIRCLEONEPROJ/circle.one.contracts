@@ -5,7 +5,7 @@ import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
 contract PurchaseDataset is Ownable {
     ERC20 public token;
-    mapping (uint256 => bool) public accessControl;
+    mapping (uint256 => bool) public purchased;
 
     event Purchased(address indexed purchasedBy,
                     uint256 indexed accessTokenHash,
@@ -16,8 +16,8 @@ contract PurchaseDataset is Ownable {
     }
 
     function purchase(uint256 _price, uint256 _accessTokenHash) public {
-        require(!accessControl[_accessTokenHash]);
-        accessControl[_accessTokenHash] = true;
+        require(!purchased[_accessTokenHash]);
+        purchased[_accessTokenHash] = true;
         assert(token.transferFrom(msg.sender, owner, _price));
         Purchased(msg.sender, _accessTokenHash, _price);
     }
